@@ -1,0 +1,46 @@
+<div class="m-5 pb-5">
+    <div class="row">
+    <div class="col-sm-6"> <h3 class="display-1">{{ user.displayName }}</h3></div>
+    <div class= "col-sm-6 text-right"> 
+        <button class="btn btn-danger" (click)="covid.signOut()"> Sign Out </button>
+    </div>
+</div>
+<br/> 
+<br/>
+<br/>
+
+<app-addnews></app-addnews>
+
+<div class ="mt-5">
+    <table class="table table-bordered">
+      <thead>
+        <tr class="table-light">
+          <th colspan="2">History of World's news :  </th>
+        </tr>
+      </thead>
+      </table>
+  </div>
+
+    <div class="text-center ">
+    <br/>
+    <br/>
+    <table class="table table-bordered tabled-striped">
+        <thead>
+            <tr>
+                <th> Author </th>
+                <th> Date </th>
+                <th> Country </th>
+                <th> Description </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor= "let News of news">
+                <td> {{News.author}}    </td>
+                <td> {{News.date.toDate() | date }}</td>
+                <td> {{News.country}}</td>
+                <td> {{News.description}}</td>
+             </tr>
+        </tbody>
+    </table>
+    </div>
+    </div>

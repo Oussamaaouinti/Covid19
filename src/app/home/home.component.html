@@ -1,0 +1,151 @@
+<div class="m-5 pb-5">
+<div class="float-right">
+<button type="button" class="btn btn-primary" (click)="covid.signInWithGoogle()"> Sign in with Google </button>
+</div>
+<div class="text-center">
+    <div class="image-container">
+    <img 
+        style="width:54px;height:54px;"
+        src="https://firebasestorage.googleapis.com/v0/b/covid19-ebd19.appspot.com/o/virus.png?alt=media&token=341ae3cf-2886-400c-8c58-3a59e3c6eeef"
+        alt="covid19 image"
+        /> 
+    <h2> COVID-19 </h2>
+    </div>
+        <h3> Live Updates and Statistics </h3>
+      </div>
+
+
+        <div class="mt-3 mb-5">
+        <table class="table table-bordered">
+            <thead>
+              <tr class="table-light">
+                <th colspan="2"> Corona Virus Summary Worldwide </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="table-warning">
+                <th scope="row">Total Cases</th>
+                <td>{{totalConfirmed}}</td>
+              </tr>
+              <tr class="table-warning">
+                <th scope="row">New Cases</th>
+                <td>{{newConfirmed}}</td>
+              </tr>
+              <tr class="table-warning">
+                <th scope="row">Active Cases</th>
+                <td >{{activeCases}}</td>
+              </tr>
+              <tr  class="table-primary">
+                <th scope="row">Total Recovered </th>
+                <td>{{totalRecovered}}</td>
+               
+              </tr>
+              <tr  class="table-primary">
+                <th scope="row">New Recovered</th>
+                <td> {{newRecovered}}</td>
+               
+              </tr>
+              <tr  class="table-primary">
+                <th scope="row">Recovery Rate</th>
+                <td > {{recoveryRate  }}%</td>
+                
+              </tr>
+              <tr class="table-danger">
+                <th scope="row">Total Deaths</th>
+                <td>{{totalDeaths}}</td>
+                
+              </tr>
+              <tr class="table-danger">
+                <th scope="row">New Deaths</th>
+                <td>{{newDeaths}}</td>
+                
+              </tr>
+              <tr class="table-danger">
+                <th scope="row">Mortality Rate</th>
+                <td>{{mortalityRate }}%</td>
+                
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      <div clas="mt-5">
+        <table class="table table-bordered">
+        <thead>
+          <tr class="table-light">
+            <th colspan="2"> Corona Virus Cases Distribution Worldwide </th>
+          </tr>
+        </thead>
+      </table>
+        <canvas id="pieChart" style="max-width: 900px;"  ></canvas>
+        <div class="mt-5">
+          <table class="table table-bordered">
+            <thead>
+              <tr class="table-light">
+                <th colspan="2"> Daily Corona Virus Cases Worldwide </th>
+              </tr>
+            </thead>
+          </table>
+          <canvas id="barChart" style="max-width: 900px;"  ></canvas>
+        </div>
+      
+      
+        <div class="mt-5">
+          <table class="table table-bordered">
+            <thead>
+              <tr class="table-light">
+                <th colspan="2"> Total Corona Virus Cases Worldwide </th>
+              </tr>
+            </thead>
+          </table>
+          <canvas id="lineChart" style="max-width: 900px;"  ></canvas>
+        </div>
+        
+        <div class ="mt-5">
+          <table class="table table-bordered">
+            <thead>
+              <tr class="table-light">
+                <th colspan="2"> World News :   </th>
+              </tr>
+            </thead>
+            </table>
+        </div>
+        <div class="text-center ">
+        <br/>
+        <br/>
+        <table class="table table-bordered tabled-striped">
+            <thead>
+                <tr>
+                    <th> Author </th>
+                    <th> Date </th>
+                    <th> Country </th>
+                    <th> Description </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor= "let News of news">
+                    <td> {{News.author}}    </td>
+                    <td> {{News.date.toDate() | date }}</td>
+                    <td> {{News.country}}</td>
+                    <td> {{News.description}}</td>
+                 </tr>
+            </tbody>
+        </table>
+        </div>
+         
+        
+        <div class="mt-5">
+        
+    <div class="mb-5">
+      <table class="table table-bordered">
+        <thead>
+          <tr class="table-light">
+            <th colspan="2"> Corona Virus Cases by country </th>
+          </tr>
+        </thead>
+      </table>
+      <app-countries-table></app-countries-table>
+    </div>
+  
+    <app-footer></app-footer>
+
+</div>

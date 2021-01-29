@@ -1,0 +1,35 @@
+<mat-table [dataSource]="dataSource" matSort >
+    
+    <ng-container  matColumnDef="Country" click="covid.signOut()">
+        <mat-header-cell mat-sort-header *matHeaderCellDef style="background-color: grey; color: black;">Country</mat-header-cell>
+        <mat-cell *matCellDef="let Country" [routerLink]="['/country/', Country.Country]" style="background-color: grey; color: black;">{{Country.Country}}</mat-cell>
+    </ng-container>
+    <ng-container  matColumnDef="NewConfirmed" >
+        <mat-header-cell  *matHeaderCellDef mat-sort-header style="background-color: rgb(255, 230, 179);">New Cases</mat-header-cell>
+        <mat-cell *matCellDef="let Country" style="background-color: rgb(255, 230, 179);" >{{Country.NewConfirmed}}</mat-cell>
+    </ng-container>
+    <ng-container  matColumnDef="TotalConfirmed">
+        <mat-header-cell *matHeaderCellDef mat-sort-header style="background-color: rgb(255, 230, 179);">Total Cases</mat-header-cell>
+        <mat-cell *matCellDef="let Country" style="background-color: rgb(255, 230, 179);">{{Country.TotalConfirmed}}</mat-cell>
+    </ng-container>
+    <ng-container  matColumnDef="NewRecovered" >
+        <mat-header-cell  *matHeaderCellDef mat-sort-header style="background-color: rgb(153, 204, 255);"> New Recoveries</mat-header-cell>
+        <mat-cell *matCellDef="let Country" style="background-color: rgb(153, 204, 255);">{{Country.NewRecovered}}</mat-cell>
+    </ng-container>
+    <ng-container  matColumnDef="TotalRecovered" >
+        <mat-header-cell  *matHeaderCellDef mat-sort-header style="background-color: rgb(153, 204, 255);">Total Recoveries</mat-header-cell>
+        <mat-cell *matCellDef="let Country" style="background-color: rgb(153, 204, 255);">{{Country.TotalRecovered}}</mat-cell>
+    </ng-container>
+    <ng-container  matColumnDef="NewDeaths">
+        <mat-header-cell  *matHeaderCellDef mat-sort-header style="background-color: rgb(255, 153, 153);">New Deaths</mat-header-cell>
+        <mat-cell *matCellDef="let Country" style="background-color: rgb(255, 153, 153);">{{Country.NewDeaths}}</mat-cell>
+    </ng-container>
+    <ng-container  matColumnDef="TotalDeaths">
+        <mat-header-cell  *matHeaderCellDef mat-sort-heade style="background-color: rgb(255, 153, 153);">Total Deaths</mat-header-cell>
+        <mat-cell *matCellDef="let Country" style="background-color: rgb(255, 153, 153);">{{Country.TotalDeaths}}</mat-cell>
+    </ng-container>
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns" ></mat-row>
+
+</mat-table>
+    
