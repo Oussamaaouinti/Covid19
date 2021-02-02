@@ -138,7 +138,10 @@ export class CountryComponent implements OnInit {
       var k ; 
       for(k=0 ; k<7 ; k++)
       {
-        this.addLabel(this.barChart,this.datepipe.transform(weekago.setDate(today.getDate()+k-7),'yyyy-MM-dd'))
+        today=new Date() ; 
+        weekago=new Date() ; 
+        this.addLabel(this.barChart,this.datepipe.transform(weekago.setDate(today.getDate()-7+k),'yyyy-MM-dd'))
+
       }
          
     
@@ -198,8 +201,8 @@ export class CountryComponent implements OnInit {
 
      this.covid.getCountryNews(this.countryname).subscribe((news : News[]) => {
       this.news = news ; 
+      this.newsfound= this.news.length > 0 ;  
     } )
-    this.newsfound= this.news.length > 0 ;  
 
 }
 }

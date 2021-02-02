@@ -9,9 +9,6 @@ import {Country} from './country.model'
 import { Router } from '@angular/router';
 import {News} from './news.model' ;
 import {CustomDatePipe} from './custom-date-pipe' ; 
-import { of } from 'rxjs/internal/observable/of';
-import { Observer} from 'rxjs' ; 
-import {map} from 'rxjs/operators' ; 
 import { __values } from 'tslib';
 @Injectable({
   providedIn: 'root',

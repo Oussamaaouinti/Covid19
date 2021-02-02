@@ -172,6 +172,8 @@ async ngOnInit(): Promise<void> {
       var k ; 
       for(k=0 ; k<7 ; k++)
       {
+        today=new Date() ; 
+        weekago=new Date() ; 
         this.addLabel(this.barChart,this.datepipe.transform(weekago.setDate(today.getDate()-7+k),'yyyy-MM-dd'))
       }
         

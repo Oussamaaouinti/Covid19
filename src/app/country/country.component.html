@@ -65,6 +65,40 @@
         </tbody>
       </table>
     </div>
+
+    <div *ngIf="newsfound" >
+      <div  class ="mt-5">
+        <table class="table table-bordered">
+          <thead>
+            <tr class="table-light">
+              <th colspan="2">{{countryname}}'s news :  </th>
+            </tr>
+          </thead>
+          </table>
+      </div>
+      <div class="text-center ">
+        <div class="mb-5 mt-5">
+          <table class="table table-bordered tabled-striped">
+            <thead>
+                <tr>
+                    <th> Author </th>
+                    <th> Date </th>
+                    <th> Country </th>
+                    <th> Description </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor= "let News of news">
+                    <td> {{News.author}}    </td>
+                    <td> {{News.date.toDate() | date }}</td>
+                    <td> {{News.country}}</td>
+                    <td> {{News.description}}</td>
+                 </tr>
+            </tbody>
+        </table>
+        </div>
+      </div>    
+      </div>
     <table class="table table-bordered">
       <thead>
         <tr class="table-light">
@@ -85,6 +119,7 @@
             </table>
           <canvas id="barChart" style="max-width: 900px;"  ></canvas>
           </div>
+          
           <div class="mt-5">
             <table class="table table-bordered">
               <thead>
@@ -95,40 +130,7 @@
               </table>
             <canvas id="lineChart" style="max-width: 900px;"  ></canvas>
             </div>
-            <div *ngIf="newsfound" >
-            <div  class ="mt-5">
-              <table class="table table-bordered">
-                <thead>
-                  <tr class="table-light">
-                    <th colspan="2">{{countryname}}'s news :  </th>
-                  </tr>
-                </thead>
-                </table>
-            </div>
-            <div class="text-center ">
-              <br/>
-              <br/>
-              
-              <table class="table table-bordered tabled-striped">
-                  <thead>
-                      <tr>
-                          <th> Author </th>
-                          <th> Date </th>
-                          <th> Country </th>
-                          <th> Description </th>
-                      </tr>
-                  </thead>
-                  <tbody>
-                      <tr *ngFor= "let News of news">
-                          <td> {{News.author}}    </td>
-                          <td> {{News.date.toDate() | date }}</td>
-                          <td> {{News.country}}</td>
-                          <td> {{News.description}}</td>
-                       </tr>
-                  </tbody>
-              </table>
-              </div>
-            </div>    
+            
             <div class="mt-5">
             <app-footer></app-footer>
             </div>
